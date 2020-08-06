@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Out Form</title>
+
+    <!-- Bootstrap 5.0.0 Alpha CSS -->
+    <link rel="stylesheet" href="assets/bootstrap-5.0.0-alpha1-dist/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/custom/style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container text-center mt-2">
+        <h2>Check Out</h2>
+    </div>
+
+    <hr>
+
+    <div class="container col-md-6 order-md-1 mt-4">
+        <h3>Billing address</h3>
+        <div class="row mt-4">
+            <form class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="validationCustom01" class="form-label">First name</label>
+                        <input type="text" class="form-control" id="validationCustom01" required
+                            placeholder="Enter Your First Name">
+                        <div class="invalid-feedback">
+                            First Name Cannot Be Empty
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom02" class="form-label">Last name</label>
+                        <input type="text" class="form-control" id="validationCustom02" required
+                            placeholder="Enter Your Last Name">
+                        <div class="invalid-feedback">
+                            Last Name Cannot Be Empty
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-2">
+                    <label for="validationCustomUsername" class="form-label">Username</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                        <input type="text" class="form-control" id="validationCustomUsername"
+                            aria-describedby="inputGroupPrepend" required placeholder="Enter Your Username">
+                        <div class="invalid-feedback">
+                            Please provide your username.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-2">
+                    <label for="validationCustom03" class="form-label">Email ID</label>
+                    <input type="email" class="form-control" id="validationCustom03" required
+                        placeholder="Enter your email Id">
+                    <div class="invalid-feedback">
+                        Give a valid Email.
+                    </div>
+                </div>
+                <div class="col-md-12 mt-2">
+                    <label for="validationTextarea" class="form-label">Address</label>
+                    <textarea class="form-control" id="validationTextarea" placeholder="Enter Your Address"
+                        required></textarea>
+                    <div class="invalid-feedback">
+                        Please enter a message in the textarea.
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-5">
+                        <label for="validationCustom03" class="form-label">City</label>
+                        <input type="text" class="form-control" id="validationCustom03" required
+                            placeholder="Enter Your City.">
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationCustom04" class="form-label">State</label>
+                        <select class="form-select" id="validationCustom04" required>
+                            <option disabled>Choose Your State</option>
+
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom05" class="form-label">Zip</label>
+                        <input type="text" class="form-control" id="validationCustom05" required placeholder="Zip Code">
+                        <div class="invalid-feedback">
+                            Please provide a valid zip.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                            Agree to terms and conditions
+                        </label>
+                        <div class="invalid-feedback">
+                            You must agree before submitting.
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-4">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="form-check-input" id="same-address">
+                    <label class="custom-control-label" for="same-address">Shipping address is the same as my billing
+                        address</label>
+                </div>
+                <div class="custom-control custom-checkbox mt-3">
+                    <input type="checkbox" class="form-check-input" id="save-info">
+                    <label class="custom-control-label" for="save-info">Save this information for next time</label>
+                </div>
+                <hr class="mb-4 mt-4">
+                <h4 class="mb-3">Payment</h4>
+
+                <div class="d-block my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="credit" name="paymentMethod" type="radio" class="form-check-input"
+                            onclick="showcards();" required>
+                        <label class="custom-control-label" for="credit">Credit card</label>
+                        <div class="invalid-feedback">
+                            Select any one payment Method.
+                        </div>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="debit" name="paymentMethod" type="radio" class="form-check-input"
+                            onclick="showcards();" required>
+                        <label class="custom-control-label" for="debit">Debit card</label>
+                        <div class="invalid-feedback">
+                            Select any one payment Method.
+                        </div>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="paypal" name="paymentMethod" type="radio" class="form-check-input"
+                            onclick="hidecards();" required>
+                        <label class="custom-control-label" for="paypal">Paypal</label>
+                        <div class="invalid-feedback">
+                            Select any one payment Method.
+                        </div>
+                    </div>
+                </div>
+                <div id="cards" style="display: none;">
+                    <div class="row mb-4 mt-2">
+                        <h4>Accepted Cards</h4>
+                        <div class="icon-container">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-name" class="form-label">Name on card</label>
+                            <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                            <small class="text-muted">Full name as displayed on card</small>
+                            <div class="invalid-feedback">
+                                Name on card is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-number" class="form-label">Credit card number</label>
+                            <input type="text" class="form-control" id="cc-number" placeholder="xxxx-xxxx-xxxx-xxxx"
+                                required>
+                            <div class="invalid-feedback">
+                                Credit card number is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            <label for="cc-expiration" class="form-label">Expiration</label>
+                            <input type="text" class="form-control" id="cc-expiration" placeholder="MM / YY" required>
+                            <div class="invalid-feedback">
+                                Expiration date cannot be Empty.
+                            </div>
+                        </div>
+                        <div class="col-md-7 mb-3">
+                            <label for="cc-expiration" class="form-label">CVV</label>
+                            <input type="text" class="form-control" id="cc-cvv" placeholder="Enter Security code"
+                                required>
+                            <div class="invalid-feedback">
+                                Security code required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="phno" style="display: none;">
+                    <div class="col-md-12 mb-3">
+                        <label for="cc-number" class="form-label">Registered Phone Number With Paypal</label>
+                        <input type="text" class="form-control" id="cc-number" placeholder="xxxxx xxxxx" required>
+                        <div class="invalid-feedback">
+                            Enter the Registered Phone Number With Paypal.
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-4">
+                <div class="col-12 mt-4 mb-5">
+                    <button class="btn btn-primary btn-block btn-lg" type="submit">Check Out</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/jquery/jquery-3.5.1.slim.js"></script>
+    <script src="assets/bootstrap-5.0.0-alpha1-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+
+    <script>
+        function showcards() {
+            document.getElementById('cards').style.display = 'block';
+            document.getElementById('phno').style.display = 'none';
+        }
+        function hidecards() {
+            document.getElementById('cards').style.display = 'none';
+            document.getElementById('phno').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
