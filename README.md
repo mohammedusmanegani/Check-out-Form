@@ -3,7 +3,7 @@ A simple check out billing form built using Bootstrap 5.0.0 Alpha. (With JS Vali
 
 ![DEMO IMAGE](https://github.com/mohammedusmanegani/Check-out-Form/blob/master/demo.png)
 
-#When you select Card Mode of Payment.
+# When you select Card Mode of Payment.
 
 ![DEMO IMAGE](https://github.com/mohammedusmanegani/Check-out-Form/blob/master/demo1.png)
 
